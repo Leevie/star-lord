@@ -1,1 +1,1 @@
-Some new idea!
+Some new idea and voted.
