@@ -5,8 +5,8 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-// const cheerio = require('cheerio');
-// const request = require('request');
+const cheerio = require('cheerio');
+const request = require('request');
 
 // Routes
 // =============================================================
@@ -14,15 +14,38 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
+  // root route loads index.html
   app.get("/", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/blog.html"));
-
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
+  // test route loads test.html
+  app.get("/test", function(req, res) {
+    request({
+        method: 'GET',
+         url: 'http://www.seasky.org/astronomy/astronomy-calendar-2019.html'  //'http://localhost:8000'
+    }, (err, res, body) => {
+    
+        if (err) return console.error(err);
+    
+        let $ = cheerio.load(body);
+
+        const dates = [];
+        const titles = [];
+        
+     $('.date-text').each(function(i, elem) {
+       dates[i] = $(this).text();
+     });
+    
+     $('.title-text').each(function(i, elem) {
+        titles[i] = $(this).text();
+      });
+    
+    console.log(dates)
+    console.log(titles)
+    
+    })
+    res.sendFile(path.join(__dirname, "../public/test.html"));
   });
 
   // blog route loads blog.html
