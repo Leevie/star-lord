@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const request = require('request');
 
-request({
+module.exports = request({
     method: 'GET',
      url: 'http://www.seasky.org/astronomy/astronomy-calendar-2019.html'  //'http://localhost:8000'
 }, (err, res, body) => {
@@ -22,8 +22,8 @@ request({
     titles[i] = $(this).text();
   });
 
-//  console.log(dates)
-// console.log(titles)
+ console.log(dates)
+console.log(titles)
 
 
     // console.log(title.text());

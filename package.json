@@ -1,0 +1,22 @@
+{
+  "name": "starlord",
+  "version": "1.0.0",
+  "description": "Starlord Starwatching Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Sam, Chris, Trevor, Leevie",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.4",
+    "request": "^2.88.0",
+    "sequelize": "^4.41.2",
+    "stargazing-time": "^1.0.0"
+  }
+}
