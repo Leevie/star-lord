@@ -7,6 +7,7 @@
 var path = require("path");
 const cheerio = require('cheerio');
 const request = require('request');
+var db = require("../models");
 
 // Routes
 // =============================================================
@@ -43,6 +44,12 @@ module.exports = function(app) {
     
     console.log(dates)
     console.log(titles)
+
+    for(i = 0; i < titles.length; i++){
+    db.Events.create({ title: titles[i], date: dates[i], description: "waiting on this" }).then(event => {
+        console.log("Event auto-generated ID:", event.id);
+      });
+    }
     
     })
     res.sendFile(path.join(__dirname, "../public/test.html"));
