@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link rel="stylesheet" href="./views/css/foundation.css">
   <link rel="stylesheet" href="./views/css/app.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src = "js/events.js"></script>
 </head>
 
 <body>
@@ -89,25 +91,7 @@
           <!-- <th width="150">Table Header</th> -->
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
+        <tbody id = "events">
         </tbody>
       </table>
     </div>
@@ -128,7 +112,7 @@
             <th width="150">Table Header</th> -->
               </tr>
             </thead>
-            <tbody>
+            <tbody id = "favorited-events">
               <tr>
                 <td>Event Goes Here</td>
                 <td>Date Goes Here</td>

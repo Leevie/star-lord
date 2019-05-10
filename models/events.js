@@ -14,6 +14,10 @@ module.exports = function(sequelize, DataTypes) {
       description: {
         type: DataTypes.TEXT,
         allowNull: false
+    },
+    favorited: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
     }
   });
     return Events;
