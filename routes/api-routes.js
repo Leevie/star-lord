@@ -46,7 +46,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/events/:id", function(req, res) {
-    db.Events.update({favorited: 1},
+    db.Events.update({favorited: req.body.favorited}, //was 1
       {where: {
         id: req.params.id
       }}).then(function(results) {
