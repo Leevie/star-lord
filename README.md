@@ -10,7 +10,6 @@ Starlord is an app built on Node and uses Express as a server. After viewing upc
 * NodeJS
 * Express
 * MySQL
-* Handlebars
 * Sequelize
 * Foundation
 
