@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project II | Welcome</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  <link rel="stylesheet" href="./views/css/foundation.css">
-  <link rel="stylesheet" href="./views/css/app.css">
+  <link rel="stylesheet" href="./css/foundation.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src = "js/events.js"></script>
 </head>
 
 <body>
@@ -89,25 +91,7 @@
           <!-- <th width="150">Table Header</th> -->
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-          <!-- <td>Content Goes Here</td> -->
-          </tr>
+        <tbody id = "events">
         </tbody>
       </table>
     </div>
@@ -117,7 +101,7 @@
         <div class="card-divider">
           Favorited Events
         </div>
-        <img src="./views/images/rectangle-1.webp">
+        <img src="./images/rectangle-1.webp">
         <div class="card-section">
           <table class="hover">
             <thead>
@@ -128,25 +112,7 @@
             <th width="150">Table Header</th> -->
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
-              <tr>
-                <td>Space Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
-              <tr>
-                <td>Space Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
+            <tbody id = "favorited-events">
             </tbody>
           </table>
         </div>
@@ -331,10 +297,10 @@
   </footer>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-  <script src="./views/js/vendor/jquery.js"></script>
-  <script src="./views/js/vendor/what-input.js"></script>
-  <script src="./views/js/vendor/foundation.js"></script>
-  <script src="./views/js/app.js"></script>
+  <script src="./js/vendor/jquery.js"></script>
+  <script src="./js/vendor/what-input.js"></script>
+  <script src="./js/vendor/foundation.js"></script>
+  <script src="./js/app.js"></script>
   <script>
     $(document).foundation();
   </script>

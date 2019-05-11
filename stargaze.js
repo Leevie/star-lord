@@ -13,6 +13,7 @@ StargazingTime.getGoodTimes({
         console.log(weatherArray[2])
         // console.log(results[0].forecast.weather[0])
 
+
         var dateTest = new Date(results[0].from)
         console.log((dateTest.getUTCHours() - 6))       //-6 converts UTC to central time (our time) 0 would be midnight
 
