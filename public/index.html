@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project II | Welcome</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link rel="stylesheet" href="./assets/css/foundation.css">
   <link rel="stylesheet" href="./assets/css/app.css">
@@ -32,7 +33,7 @@
 
 
   <div class="row column text-center">
-    <h2>Upcoming Space Events</h2>
+    <h2>Choose Your Favorite Space Events!</h2>
     <hr>
   </div>
 
@@ -50,24 +51,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-            <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-            <!-- <td>Content Goes Here</td> -->
-          </tr>
-          <tr>
-            <td>Space Event Goes Here</td>
-            <td>Date Goes Here</td>
-            <td><button type="button" class="hollow button success">Select</button></td>
-            <!-- <td>Content Goes Here</td> -->
-          </tr>
+
         </tbody>
       </table>
 
@@ -76,7 +60,7 @@
 
 
     <div class="columns small-6">
-      <div class="card" style="width: 300px;" id="favorite-events">
+      <div class="card" style="width: 300px;" id="favorites-table">
         <div class="card-divider">
           Favorited Events
         </div>
@@ -92,24 +76,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
-              <tr>
-                <td>Space Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
-              <tr>
-                <td>Space Event Goes Here</td>
-                <td>Date Goes Here</td>
-                <!-- <td>Content Goes Here</td>
-            <td>Content Goes Here</td> -->
-              </tr>
+
             </tbody>
           </table>
         </div>
@@ -117,7 +84,7 @@
     </div>
   </div>
 
-  
+
   <footer>
     <div class="row column text-center">
       Copyright &copy;
@@ -126,7 +93,58 @@
       </script>, coffeeCoders. All Rights Reserved.
     </div>
   </footer>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+
+  <script type="text/javascript">
+
+    $.get("/api/events", function (data) {
+      console.log(data);
+
+      for (var i = 0; i < data.length; i++) {
+
+      $("#events-table").append("<tr><td id='fav-title data-id="+ data[i].id + ">" + data[i].title + "</td><td id='fav-date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
+      };
+
+    });
+
+    
+
+      $("#fav-btn").on("click", function (event) {
+        var newFavorite = {
+          title: $("#fav-title").val().trim(),
+          date: $("#fav-date").val().trim(),
+          id: $("#fav-title").val().trim(),
+          favorited: true
+        };
+        $("favorites-table").append("<tr><td>" + newFavorite.title + "</td><td>" + newFavorite.date + "</td></tr>");
+
+        $.ajax(
+          {
+            url: "/api/events/", 
+            type: "PUT",
+            data: newFavorite, 
+          });
+        
+        event.preventDefault();
+      });
+
+
+    
+    
+    });
+
+
+
+
+
+
+  </script>
+
+
+
+
+
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
   <script src="./assets/js/vendor/jquery.js"></script>
   <script src="./assets/js/vendor/what-input.js"></script>
