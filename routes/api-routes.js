@@ -54,6 +54,38 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/apod", function(req, res) {
+
+    var apodData;
+    var image;
+
+    //Start Request to APOD API
+    request(
+      {
+        method: "GET",
+        url: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+      },
+      (err, response) => {
+        if (err) {
+          console.log(err);
+        } else {
+ 
+          console.log("--------APOD RES BODY: ",response.body);
+          apodData  = JSON.parse(response.body);
+
+          image = apodData.url;
+          console.log("--------APOD RES BODY IMG o Day: ",image);
+
+
+          res.send(apodData);
+        }//end ELSE stmnt
+      }//end Request callback fct
+    );//End Request to APOD API
+  });
+
+
+
+
 //   // Get route for retrieving a single post
 //   app.get("/api/posts/:id", function(req, res) {
 //     // 2. Add a join here to include the Author who wrote the Post
