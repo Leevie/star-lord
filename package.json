@@ -12,11 +12,15 @@
   "author": "Sam, Chris, Trevor, Leevie",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.3",
+    "express-session": "^1.16.1",
     "mysql2": "^1.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "request": "^2.88.0",
     "sequelize": "^4.44.0",
     "stargazing-time": "^1.0.0"
