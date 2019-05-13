@@ -5,18 +5,19 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" href="./assets/css/foundation.css">
+  <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
       </div>
     </div>
-  </nav>
-  <div class="container">
+  </nav> -->
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Login Form</h2>
@@ -35,9 +36,43 @@
         <p>Or sign up <a href="/">here</a></p>
       </div>
     </div>
+  </div> -->
+  <div class="row column text-center">
+    <h2>Sign In</h2>
+  </div>
+
+  <div class="grid-container">
+    <div class="row">
+      <form>
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <div class="medium-6 cell">
+
+              <label>Email Address
+                <input type="email" placeholder="Email">
+              </label>
+            </div>
+            <div class="medium-6 cell">
+              <label>Password
+                <input type="password" placeholder="Password">
+              </label>
+            </div>
+          </div>
+
+      </form>
+
+      <button type="submit" id="submit" class="success button">Submit</button>
+
+      <p>Or sign up <a href="/">here</a></p>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/what-input.js"></script>
+  <script src="./assets/js/vendor/foundation.js"></script>
+  <script src="./assets/js/app.js"></script>
   <script type="text/javascript" src="./assets/js/login.js"></script>
 
 </body>
