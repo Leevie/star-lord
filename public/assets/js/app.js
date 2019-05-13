@@ -11,3 +11,18 @@ $(document).foundation()
 //       }
 //     */
 // });
+
+$.get("/api/apod", function (data) {
+    console.log(data);
+    // for (var i = 0; i < data.length; i++) {
+    // $("#events-table").append("<tr><td id='fav-title data-id="+ data[i].id + ">" + data[i].title + "</td><td id='fav-date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
+    var imageURL = data.url;
+    var imageTitle = data.title;
+    var image = $("<img>")
+        .attr("src", imageURL)
+        
+        $("#fav-img")
+          .append(image)
+          .append(imageTitle);
+    
+  });
