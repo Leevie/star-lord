@@ -1,26 +1,8 @@
-body {
-    background-image: url(../images/hubble1.png);
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Space Mono', monospace;
-}
-
-#welcome-text {
-    color: white;
-}
-
 #events-table {
     float: left;
-    
 }
 
 #favorite-events {
     float: right;
-    
 }
-
-h2, h3 {
-    font-family: 'Roboto', sans-serif;
-}
-
-
 
