@@ -1,6 +1,5 @@
 // Requiring our models
 var db = require("../models");
-const cheerio = require('cheerio');
 const request = require('request');
 
 // Routes
@@ -9,36 +8,36 @@ module.exports = function(app) {
 
 //   GET route for getting all of the posts
   app.get("/api/events", function(req, res) {   
-    request({
-        method: 'GET',
-         url: 'http://www.seasky.org/astronomy/astronomy-calendar-2019.html'  //'http://localhost:8000'
-    }, (err, res, body) => {
+    // request({
+    //     method: 'GET',
+    //      url: 'http://www.seasky.org/astronomy/astronomy-calendar-2019.html'  //'http://localhost:8000'
+    // }, (err, res, body) => {
     
-        if (err) return console.error(err);
+    //     if (err) return console.error(err);
     
-        let $ = cheerio.load(body);
+    //     let $ = cheerio.load(body);
 
-        const dates = [];
-        const titles = [];
+    //     const dates = [];
+    //     const titles = [];
         
-    //  $('.date-text').each(function(i, elem) {
-    //    dates[i] = $(this).text();
-    //  });
+    // //  $('.date-text').each(function(i, elem) {
+    // //    dates[i] = $(this).text();
+    // //  });
     
-    //  $('.title-text').each(function(i, elem) {
-    //     titles[i] = $(this).text();
-    //   });
+    // //  $('.title-text').each(function(i, elem) {
+    // //     titles[i] = $(this).text();
+    // //   });
     
-    console.log(dates)
-    console.log(titles)
+    // console.log(dates)
+    // console.log(titles)
 
-    for(i = 0; i < titles.length; i++){
-    db.Events.create({ title: titles[i], date: dates[i], description: "waiting on this", favorited: false }).then(event => {
-        console.log("Event auto-generated ID:", event.id);
-      });
-    }
+    // for(i = 0; i < titles.length; i++){
+    // db.Events.create({ title: titles[i], date: dates[i], description: "waiting on this", favorited: false }).then(event => {
+    //     console.log("Event auto-generated ID:", event.id);
+    //   });
+    // }
     
-    });
+    // });
     // 1. Add a join here to include all of the Authors to these posts
     db.Events.findAll().then(function(eventData) {
       res.json(eventData);
@@ -119,15 +118,15 @@ module.exports = function(app) {
 //   });
 
 //   // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+//   app.put("/api/posts", function(req, res) {
+//     db.Post.update(
+//       req.body,
+//       {
+//         where: {
+//           id: req.body.id
+//         }
+//       }).then(function(dbPost) {
+//       res.json(dbPost);
+//     });
+//   });
 };

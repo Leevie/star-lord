@@ -6,3 +6,37 @@
     float: right;
 }
 
+body {
+    background-image: url(../images/hubble.png);
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Space Mono', monospace;
+ }
+ 
+ #welcome-text {
+    color: white;
+ }
+
+ p {
+     color: white;
+ }
+
+ #email{
+     color: white;
+ }
+
+ #pass {
+     color: white;
+ }
+ 
+ #events-table {
+    float: left;
+ }
+ 
+ #favorite-events {
+    float: right;
+ }
+ 
+ h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+ }
