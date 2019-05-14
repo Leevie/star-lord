@@ -42,16 +42,15 @@ $(document).on("click", ".unFav", function(){
 
   $.get("/api/events", function(data) {
     for(var i = 0; i < data.length; i++) {
-    let x = i+1;
+    let x = i+1
     let newTr = $("<tr>");
     newTr.append("<td>" + data[i].title + "</td>");
     newTr.append("<td>" + data[i].date + "</td>")
     $(".foundationSuxx").addClass("success button")
     $(".unFav").addClass("alert button")
 
-
    if(data[i].favorited == 0){
-    newTr.append("<td>" + "<button type = " + "button " + "i class = " + "fas fa-rocket" + "</i> " + "data-id = " + x + " class = " + "foundationSuxx" + ">" + "Favorite" + "</button>" + "</td>")
+    newTr.append("<td>" + "<button type = " + "button " + "data-id = " + x + " class = " + "foundationSuxx" + ">" + "Favorite" + "</button>" + "</td>")
     $("#events").append(newTr)
    }
     else{
