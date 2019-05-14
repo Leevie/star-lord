@@ -19,9 +19,9 @@ module.exports = function(app) {
   // });
 
   // test route loads test.html
-  app.get("/test", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/test.html"));
-  });
+//   app.get("/members", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/members.html"));
+//   });
 
   // blog route loads blog.html
   app.get("/blog", function(req, res) {
