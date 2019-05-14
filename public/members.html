@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link rel="stylesheet" href="./assets/css/foundation.css">
   <link rel="stylesheet" href="./assets/css/app.css">
+  <script src = "./assets/js/events.js"></script>
 </head>
 
 <body>
@@ -55,8 +56,7 @@
             <!-- <th width="150">Table Header</th> -->
           </tr>
         </thead>
-        <tbody>
-
+        <tbody id = "events">
         </tbody>
       </table>
 
@@ -81,8 +81,7 @@
             <th width="150">Table Header</th> -->
               </tr>
             </thead>
-            <tbody>
-
+            <tbody id = "favorited-events">
             </tbody>
           </table>
         </div>
@@ -104,17 +103,17 @@
 
   <script type="text/javascript">
 
-    $.get("/api/events", function (data) {
-      console.log(data);
+    // $.get("/api/events", function (data) {
+    //   console.log(data);
 
-      for (var i = 0; i < data.length; i++) {
+    //   for (var i = 0; i < data.length; i++) {
 
-        // $("#events-table").append("<tr><td id='title data-id=" + data[i].id + ">" + data[i].title + "</td><td id='date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
+    //     // $("#events-table").append("<tr><td id='title data-id=" + data[i].id + ">" + data[i].title + "</td><td id='date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
 
-        $("#events-table").append("<tr><td id='title'"> + data[i].title + "</td><td> id='date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
-      };
+    //     $("#events-table").append("<tr><td id='title'"> + data[i].title + "</td><td> id='date'>" + data[i].date + "</td><td>" + '<button type="button" class="hollow button success" id="fav-btn">Select</button>' + "</td></tr>");
+    //   };
 
-    });
+    // });
 
 
 
