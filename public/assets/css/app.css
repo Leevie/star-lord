@@ -16,6 +16,10 @@ body {
     color: white;
  }
 
+ label{
+     color: white;
+ }
+
  p {
      color: white;
  }
@@ -39,4 +43,8 @@ body {
  h2, h3 {
     font-family: 'Roboto', sans-serif;
     color: white;
+ }
+
+ .small-4 {
+     float: left !important;
  }

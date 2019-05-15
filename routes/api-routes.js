@@ -1,48 +1,29 @@
 // Requiring our models
 var db = require("../models");
 const request = require('request');
+const StargazingTime = require('stargazing-time');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-//   GET route for getting all of the posts
+//   GET route for getting all of the events
   app.get("/api/events", function(req, res) {   
-    // request({
-    //     method: 'GET',
-    //      url: 'http://www.seasky.org/astronomy/astronomy-calendar-2019.html'  //'http://localhost:8000'
-    // }, (err, res, body) => {
-    
-    //     if (err) return console.error(err);
-    
-    //     let $ = cheerio.load(body);
-
-    //     const dates = [];
-    //     const titles = [];
-        
-    // //  $('.date-text').each(function(i, elem) {
-    // //    dates[i] = $(this).text();
-    // //  });
-    
-    // //  $('.title-text').each(function(i, elem) {
-    // //     titles[i] = $(this).text();
-    // //   });
-    
-    // console.log(dates)
-    // console.log(titles)
-
-    // for(i = 0; i < titles.length; i++){
-    // db.Events.create({ title: titles[i], date: dates[i], description: "waiting on this", favorited: false }).then(event => {
-    //     console.log("Event auto-generated ID:", event.id);
-    //   });
-    // }
-    
-    // });
-    // 1. Add a join here to include all of the Authors to these posts
     db.Events.findAll().then(function(eventData) {
       res.json(eventData);
     });
   });
+
+  app.get("/api/stargaze/:city", function(req, res) {   
+    StargazingTime.getGoodTimes({
+      city: req.params.city + ',us',
+      apiKey: '028bfc49fd0424eb39c6628c6a864f9e'
+  })
+    .then(function(data) {
+      res.json(data);
+    });
+  });
+
 
   app.put("/api/events/:id", function(req, res) {
     db.Events.update({favorited: req.body.favorited}, //was 1
