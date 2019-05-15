@@ -32,15 +32,6 @@ body {
      color: white;
  }
  
- #events-table {
-    float: left;
-    /* opacity: 90%; */
- }
- 
- #favorite-events {
-    float: right;
- }
- 
  h2, h3 {
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -48,8 +39,4 @@ body {
 
  .small-4 {
      float: left !important;
- }
-
-.top-bar {
-     opacity: 0.5%;
  }
