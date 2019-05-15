@@ -18,6 +18,8 @@
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.3",
     "express-session": "^1.16.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",

@@ -28,4 +28,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  app.get("/about", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/about.html"));
+  });
+
+  app.get("/stargaze", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/stargazing.html"));
+  });
+
 };

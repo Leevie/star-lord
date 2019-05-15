@@ -18,5 +18,6 @@ Starlord is an app built on Node and uses Express as a server. After viewing upc
 * cheerio (NPM)
 * Astronomy Picture of the Day (APOD) (NPM / API)
 * OpenWeatherApp (API)
+* MomentJS
 * request (NPM)
 * local-web-server (NPM)
