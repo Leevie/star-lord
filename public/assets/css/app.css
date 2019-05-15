@@ -34,6 +34,7 @@ body {
  
  #events-table {
     float: left;
+    /* opacity: 90%; */
  }
  
  #favorite-events {
@@ -47,4 +48,8 @@ body {
 
  .small-4 {
      float: left !important;
+ }
+
+.top-bar {
+     opacity: 0.5%;
  }
