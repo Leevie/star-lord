@@ -40,3 +40,7 @@ body {
  .small-4 {
      float: left !important;
  }
+
+ footer {
+     color: white;
+ }

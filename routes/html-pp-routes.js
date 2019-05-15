@@ -29,7 +29,7 @@ module.exports = function(app) {
   });
 
   app.get("/about", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/about.html"));
+    res.sendFile(path.join(__dirname, "../public/about1.html"));
   });
 
   app.get("/stargaze", isAuthenticated, function(req, res) {
