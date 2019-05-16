@@ -46,10 +46,10 @@ $(document).on("click", ".unFav", function(){
     let newTr = $("<tr>");
     newTr.append("<td>" + data[i].title + "</td>");
     newTr.append("<td>" + data[i].date + "</td>")
-    $(".foundationSuxx").addClass("success button")
+    $(".foundationSuxx").addClass("success button") //Adding classes cause Foundation is difficult to use with jQuery
     $(".unFav").addClass("alert button")
 
-   if(data[i].favorited == 0){
+   if(data[i].favorited == 0){ //Deciding which column the buttons will go to based on favorited state
     newTr.append("<td>" + "<button type = " + "button " + "data-id = " + x + " class = " + "foundationSuxx" + ">" + "Favorite" + "</button>" + "</td>")
     $("#events").append(newTr)
    }
