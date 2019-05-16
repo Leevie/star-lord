@@ -11,11 +11,14 @@
   <link rel="stylesheet" href="./assets/css/foundation.css">
   <link rel="stylesheet" href="./assets/css/app.css">
   <script src = "./assets/js/events.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
 </head>
 
 <body>
 
-  <div class="top-bar">
+  <div class="top-bar" style="opacity: 0.7">
     <div class="top-bar-left">
       <ul class="menu">
         <li class="menu-text">Space Events Site</li>
@@ -50,12 +53,12 @@
       <table class="hover" id="events-table">
         <thead>
           <tr>
-            <th width="200">Event</th>
+            <th>Event</th>
             <th>Date</th>
             
           </tr>
         </thead>
-        <tbody id = "events">
+        <tbody id ="events">
         </tbody>
       </table>
 
@@ -64,7 +67,7 @@
 
 
     <div class="columns small-6">
-      <div class="card" style="width: 400px;" id="favorites-table">
+      <div class="card" id="favorites-table">
         <div class="card-divider">
           Favorited Events
         </div>
@@ -74,19 +77,18 @@
           <table class="hover">
             <thead>
               <tr>
-                <th width="200">Event</th>
+                <th>Event</th>
                 <th>Date</th>
      
               </tr>
             </thead>
-            <tbody id = "favorited-events">
+            <tbody id ="favorited-events">
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-
 
   <footer>
     <div class="row column text-center">
